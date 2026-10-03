@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Cẩm nang ngày lễ tốt nghiệp</title>
-<meta name="description" content="Những lời dặn nhỏ để buổi lễ tốt nghiệp thật trọn vẹn.">
+<title>Tru Ly á nha~</title>
+<meta name="description" content="Nhớ đọc nhennn~">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=EB+Garamond:wght@400;600&display=swap" rel="stylesheet">
@@ -52,45 +52,56 @@ filter:drop-shadow(0 2px 14px #c9a24b99);animation:shine 5.5s linear infinite,ri
 @keyframes rise{from{opacity:0;transform:translateY(14px) scale(.96);letter-spacing:.12em}}
 header p{margin-top:8px;font-style:italic;font-size:1.05rem;color:#d9c48f}
 
-/* Đã chỉnh sửa khối điều hướng (nav) */
-nav {
-    display: flex;
-    gap: 6px;
-    position: relative;
-    z-index: 1;
-    margin-bottom: -2px;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; 
+/* ===== Thanh tab kiểu "thẻ kẹp giấy cổ" ===== */
+nav{
+  display:flex;
+  gap:4px;
+  position:relative;
+  z-index:5;            /* nổi trên panel để đè lên viền vàng */
+  margin-bottom:-2px;   /* chìm xuống đúng bằng độ dày viền panel */
+  padding:0 6px;
 }
-nav::-webkit-scrollbar { 
-    display: none; 
+.tab{
+  flex:1 1 auto;
+  min-width:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  min-height:50px;
+  padding:8px 10px;
+  font:700 clamp(.88rem,3.3vw,1.15rem)/1.2 'Cormorant Garamond',Georgia,serif;
+  color:#e9d9a8;
+  text-decoration:none;
+  background:linear-gradient(#3a2a62,#271b44);
+  border:2px solid var(--gold2);
+  border-bottom:2px solid var(--gold);   /* tab không chọn: vẫn có "mép" nối vào viền panel */
+  border-radius:12px 12px 0 0;
+  box-shadow:inset 0 1px 0 #e9c97a55;
+  cursor:pointer;
+  transition:background .25s,color .25s,box-shadow .25s,padding .25s;
 }
+.tab:hover{
+  background:linear-gradient(#4a3680,#33245a);
+  color:#fff2c4;
+  box-shadow:inset 0 1px 0 #ffe9a8aa,inset 0 0 14px #e9c97a44;
+}
+.tab:focus-visible{outline:2px solid var(--gold);outline-offset:-4px}
 
-/* Đã chỉnh sửa các nút tab */
-.tab {
-    flex: 1;
-    min-width: max-content;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    min-height: 54px;
-    padding: 8px 16px;
-    font: 700 clamp(.9rem, 3.4vw, 1.2rem)/1.2 'Cormorant Garamond', Georgia, serif;
-    color: var(--parch);
-    text-decoration: none;
-    background: #2b1e48;
-    border: 1px solid var(--gold2);
-    border-bottom: 0;
-    border-radius: 12px 12px 0 0;
-    transition: background .2s, transform .2s, box-shadow .3s;
-    cursor: pointer;
+/* Tab đang chọn: liền một khối với giấy cổ bên dưới */
+.tab.on{
+  background:var(--parch);               /* trùng màu đầu panel */
+  color:var(--wine);
+  border-color:var(--gold);
+  border-bottom:2px solid var(--parch);  /* "xóa" viền vàng của panel dưới chân tab */
+  padding-bottom:10px;
+  box-shadow:inset 0 3px 0 var(--wine),0 -4px 14px #e9c97a55;  /* gân rượu vang phía trên */
+  cursor:default;
 }
-.tab:hover{background:#3d2b66;color:#fff2c4;transform:translateY(-2px);box-shadow:0 -4px 16px #e9c97a55}
-.tab:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
-.tab.on{background:var(--parch);color:var(--wine);border-color:var(--gold);cursor:default;box-shadow:0 -4px 18px #e9c97a66}
-.tab.on:hover{transform:none}
+.tab.on:hover{background:var(--parch);color:var(--wine)}
+
+/* Panel: không bo góc trên trái để khớp với hàng tab */
+.panel{border-radius:0 0 16px 16px}
 
 .panel{position:relative;overflow:hidden;padding:32px 20px 28px;border:2px solid var(--gold);border-radius:0 0 16px 16px;
 background:linear-gradient(var(--parch),var(--parch2));
@@ -153,7 +164,7 @@ b{font-weight:600;color:var(--wine)}
 <header>
 <div class="circle" aria-hidden="true"></div>
 <svg class="orn" id="orn" role="button" tabindex="0" aria-label="Xuống phần thông tin" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="32" cy="32" r="28"/><circle cx="32" cy="32" r="22" stroke-dasharray="2 3"/><path d="M32 6l5 21 21 5-21 5-5 21-5-21-21-5 21-5z" fill="currentColor" fill-opacity=".3"/></svg>
-<h1>Cẩm nang ngày lễ tốt nghiệp</h1>
+<h1>Tru Ly gửi bạn nò~</h1>
 </header>
 
 <nav aria-label="Các mục">
@@ -164,11 +175,11 @@ b{font-weight:600;color:var(--wine)}
 </nav>
 
 <section class="panel" id="p-tips">
-<h2>Tips để có một buổi lễ tốt nghiệp trọn vẹn</h2>
+<h2>Nhớ đọc nhennn~</h2>
 <div class="div" aria-hidden="true">✦</div>
 <ol>
-<li class="key"><em>Điều quan trọng nhất</em><b>Trường T chặn WiFi</b> – mọi người nhớ liên hệ nhau qua <b>số điện thoại</b> nhé. SĐT của tui: 0382060529 hoặc 0352354872.</li>
-<li class="key"><em>Điều quan trọng thứ hai</em>Ngày lễ đông đến mức Google Maps báo <b>đường đỏ</b>, nên đi sớm hơn dự kiến một chút để vào được bãi xe trong trường (xem tab gửi xe). Nếu book xe, ưu tiên <b>cổng 1</b>; cổng 3 → 7 rất dễ kẹt, gần như không nhúc nhích.</li>
+<li class="key">Trường T chặn WiFi</b> – mọi người nhớ liên hệ nhau qua <b>số điện thoại</b> nhé. SĐT của tui: 0382060529 hoặc 0352354872.</li>
+<li class="key">Ngày lễ đông đến mức Google Maps báo <b>đường đỏ</b>, nên đi sớm hơn dự kiến một chút để vào được bãi xe trong trường (xem tab gửi xe). Nếu book xe, ưu tiên <b>cổng 1</b>; cổng 3 → 7 rất dễ kẹt, gần như không nhúc nhích.</li>
 <li>Mang theo <b>quạt cầm tay</b> nếu có – trường nhiều cây nhưng ngày lễ vẫn dễ ngộp trong thời tiết ẩm ương này.</li>
 <li>Mang <b>sạc dự phòng</b> nếu có – check-in thả ga dễ cạn pin lúc nào không hay.</li>
 <li>Chưa rõ điều gì, cứ hỏi <b>bảo vệ</b> hoặc <b>sinh viên trường T</b> – mọi người sẽ chỉ dẫn tận tình.</li>
